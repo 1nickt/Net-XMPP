@@ -2094,9 +2094,9 @@ sub AuthSend
     my %args;
     while($#_ >= 0) { $args{ lc pop(@_) } = pop(@_); }
 
-    carp("AuthSend requires a username arguement")
+    carp("AuthSend requires a username argument")
         unless exists($args{username});
-    carp("AuthSend requires a password arguement")
+    carp("AuthSend requires a password argument")
         unless exists($args{password});
 
     if($self->{STREAM}->GetStreamFeature($self->GetStreamID(),"xmpp-sasl"))
@@ -2237,11 +2237,11 @@ sub AuthSASL
     my %args;
     while($#_ >= 0) { $args{ lc pop(@_) } = pop(@_); }
 
-    $self->{DEBUG}->Log1("AuthSASL: shiney new auth");
+    $self->{DEBUG}->Log1("AuthSASL: shiny new auth");
 
-    carp("AuthSASL requires a username arguement")
+    carp("AuthSASL requires a username argument")
         unless exists($args{username});
-    carp("AuthSASL requires a password arguement")
+    carp("AuthSASL requires a password argument")
         unless exists($args{password});
 
     $args{resource} = "" unless exists($args{resource});
